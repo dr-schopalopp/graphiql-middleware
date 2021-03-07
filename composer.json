@@ -1,0 +1,35 @@
+{
+  "name": "dr-schopalopp/graphiql-middleware",
+  "description": "GraphiQL PSR-15 Middleware based on https://github.com/graphql/graphiql",
+  "homepage": "https://github.com/dr-schopalopp/graphiql-middleware",
+  "type": "library",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "keywords": [
+    "graphiql",
+    "graphql",
+    "psr",
+    "psr-15"
+  ],
+  "authors": [
+    {
+      "name": "dr-schopalopp",
+      "homepage": "https://github.com/dr-schopalopp"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "nyholm/psr7": "^1.4",
+    "psr/http-server-middleware": "^1.0.0",
+    "phpunit/php-text-template": "^2.0.4"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "squizlabs/php_codesniffer": "^3.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "DrSchopalopp\\GraphiQLMiddleware\\": "src/"
+    }
+  }
+}
