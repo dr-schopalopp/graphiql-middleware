@@ -1,7 +1,6 @@
 # GraphiQL PSR-15 Middleware
 
-[comment]: <> ([![Latest Version]&#40;https://img.shields.io/packagist/v/dr-schopalopp/graphiql-middleware.svg?style=flat-square&#41;]&#40;https://packagist.org/packages/dr-schopalopp/graphiql-middleware&#41;)
-[comment]: <> ([![Packagist]&#40;https://img.shields.io/packagist/dm/dr-schopalopp/graphiql-middleware.svg&#41;]&#40;https://packagist.org/packages/dr-schopalopp/graphiql-middleware&#41;)
+[![Latest Version](https://img.shields.io/packagist/v/dr-schopalopp/graphiql-middleware.svg?style=flat-square)](https://packagist.org/packages/dr-schopalopp/graphiql-middleware)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 Add a [GraphiQL](https://github.com/graphql/graphiql) interface to your application with this PSR-15 middleware.
