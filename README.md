@@ -20,24 +20,55 @@ composer require dr-schopalopp/graphiql-middleware
 
 This middleware was developed in a slim project, but it should work with any other PSR-15 compatible framework.
 
-### Slim
+### Slim 4
 
 ```php
-// index.php
+// app/dependencies.php
 
 use DrSchopalopp\GraphiQLMiddleware\GraphiQLMiddleware;
 
-// [...]
-
-// Add Routing Middleware
-$app->addRoutingMiddleware();
-
-// [...]
-
-// add middleware after the routing middleware
-// to ensure it's reached first by the request  
-$app->add(new GraphiQLMiddleware());
+return function (ContainerBuilder $containerBuilder) {
+    $containerBuilder->addDefinitions([
+        // ...
+        
+        GraphiQLMiddleware::class => function () {
+            return new GraphiQLMiddleware();
+        }
+        
+        // ...
+    ]);
+};
 ```
+
+```php
+// app/middleware.php
+
+use DrSchopalopp\GraphiQLMiddleware\GraphiQLMiddleware;
+
+return function (App $app) {
+    // ...
+    
+    $app->add(GraphiQLMiddleware::class);
+    
+    // ...
+};
+```
+
+```php
+// app/routes.php
+
+return static function (App $app) {
+    // ...
+
+    // dummy route necessary otherwise you will get an HTTP 405 Method Not Allowed error 
+    $app->get('/graphiql', function (Request $request, Response $response) {
+        return $response;
+    });
+    
+    // ...
+};
+```
+see [HTTP 405 Method Not Allowed](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405) for details
 
 ## License
 
